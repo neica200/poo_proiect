@@ -1,12 +1,14 @@
 #include "proba_audio.h"
-#include <iostream>
+#include <sstream>
 using namespace std;
 
 ProbaAudio::ProbaAudio(const string &denumire, int durata, int claritate):
     Proba(denumire), durata(durata),claritate(claritate){}
 
-void ProbaAudio::descriere() const {
-    cout<<"Proba audio: "<<denumire<<" Durata: "<<durata<<" sec, Claritate: "<< claritate<<"/10, Valida: "<<(valida ? "Da" :"Nu");
+string ProbaAudio::descriere() const {
+    ostringstream s ;
+    s<<"Proba audio: "<<denumire<<" Durata: "<<durata<<" sec, Claritate: "<< claritate<<"/10, Valida: "<<(valida ? "Da" :"Nu");
+    return s.str() ;
 }
 
 int ProbaAudio::importanta() const {
@@ -22,6 +24,12 @@ int ProbaAudio::importanta() const {
 
     return scor;
 }
+
+
+string ProbaAudio::get_denumire() const {
+    return denumire;
+}
+
 
 void ProbaAudio::validare() {
     valida = claritate >=5 && durata>10;

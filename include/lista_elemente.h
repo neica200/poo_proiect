@@ -31,7 +31,10 @@ public:
             os << *e << "\n";
         }
     }
-
+    auto begin(){return elemente.begin();}
+    auto begin() const {return elemente.begin();}
+    auto end(){return elemente.end();}
+    auto end() const {return elemente.end();}
 };
 
 #endif //LISTA_ELEMENTE_H

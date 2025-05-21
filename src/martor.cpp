@@ -40,7 +40,14 @@ istream& operator>>(istream& is, Martor& m) {
     cout<< "Introdu credibilitatea(0,1): ";
     is >> m.credibilitate;
     cout<<"Introdu parte(0 = Acuzat, 1 = Reclamant)";
-    is>> m.parte[is];
+    int i;
+    is>> i;
+    if (i==0) {
+        m.parte = ParteSustinuta::Acuzat;
+    }
+    else {
+        m.parte = ParteSustinuta::Reclamant;
+    }
     return is;
 }
 

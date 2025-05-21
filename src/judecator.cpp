@@ -28,6 +28,11 @@ void Judecator::afiseazaProfil() const {
     }
 }
 
+int Judecator::getExperienta() const {
+    return aniExperienta;
+}
+
+
 std::ostream& operator<<(std::ostream &os, const Judecator &ju) {
     os<<static_cast<const Persoana&>(ju);
     os << " Ani Experienta: "<< ju.aniExperienta<<" Specializare: ";

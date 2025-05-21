@@ -10,7 +10,8 @@ private:
 public:
     ProbaAudio( const string& denumire, int durata, int claritate);
 
-    void descriere() const override;
+    string get_denumire() const override;
+    string descriere() const override;
     int importanta() const override;
     void validare() override;
 

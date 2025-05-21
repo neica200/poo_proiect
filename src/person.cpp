@@ -35,6 +35,10 @@ const string &Persoana::getOcupatie() const {
     return ocupatie;
 }
 
+void Persoana::afiseazaProfil() const {
+    cout<<"Nume: "<<getNume()<<"Varsta: "<<getVarsta();
+}
+
 
 ostream& operator<<(ostream &os, const Persoana &persoana) {
     os << "Nume: " << persoana.nume << ", Varsta: " << persoana.varsta << ", Ocupatie: " << persoana.ocupatie;

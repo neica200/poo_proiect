@@ -164,6 +164,12 @@ add_executable(${MAIN_EXECUTABLE_NAME} main.cpp ${SOURCES}
         include/proba_martor.h
         src/proba_martor.cpp
         include/strategie.h
+        include/strategie_agresiva.h
+        src/strategie_agresiva.cpp
+        include/strategie_emotionanta.h
+        src/strategie_emotionanta.cpp
+        include/strategie_echilibrata.h
+        src/strategie_echilibrata.cpp
 )
 
 # NOTE: Add all defined targets (e.g. executables, libraries, etc. )

@@ -1,11 +1,13 @@
 #include "proba_document.h"
-#include <iostream>
+#include <sstream>
 using namespace std;
 
 ProbaDocument::ProbaDocument(const string &denumire, const string &tip) : Proba(denumire), tipDocument(tip) {};
 
-void ProbaDocument::descriere() const {
-    cout<<"Document: "<<denumire<<" Tip: "<< tipDocument;
+string ProbaDocument::descriere() const {
+    ostringstream s;
+    s<<"Document: "<<denumire<<" Tip: "<< tipDocument;
+    return s.str();
 }
 
 int ProbaDocument::importanta() const {
@@ -17,10 +19,15 @@ int ProbaDocument::importanta() const {
 
     if (denumire.length() > 10) scor+=2;
 
-    if (valida()) scor+=3;
+    if (esteValida()) scor+=3;
 
     return scor;
 }
+
+string ProbaDocument::get_denumire() const {
+    return tipDocument;
+}
+
 
 void ProbaDocument::validare() {
     valida = tipDocument.length() > 3;

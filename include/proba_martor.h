@@ -14,10 +14,13 @@ private:
 public:
   ProbaMartor(const string& denumire, bool credibilitate, int relevanta,const shared_ptr<Martor>& martor);
 
-  void descriere() const override;
+  string descriere() const override;
   int importanta() const override;
   void validare() override;
 
+  string get_denumire() const override {
+    return "martor";
+  }
   bool esteCredibil() const;
   int getRelevanta() const;
   shared_ptr<Martor> getMartor() const;

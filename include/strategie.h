@@ -12,7 +12,7 @@ using namespace std;
 
 class Strategie {
     public:
-    virtual void oferaSfat(const Acuzat& acuzat, const ListaElemente<Proba>& probe, const Judecator& judecator, const TipProces& tip ) = 0;
+    virtual string oferaSfat(const Acuzat& acuzat, const ListaElemente<Proba>& probe, const Judecator& judecator, const Proces& tip ) = 0;
     virtual ~Strategie() = default;
 };
 

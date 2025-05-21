@@ -23,8 +23,10 @@ public:
     Judecator(const Judecator& ju);
     Judecator& operator=(const Judecator& ju);
     virtual ~Judecator();
+
     void afiseazaProfil() const override;
     virtual string getStil() const=0;
+    int getExperienta() const;
 
     virtual void solutioneazaProces(const Proces& proces) const = 0;
     virtual void analizeazaProbe() const = 0;

@@ -23,7 +23,7 @@ public:
     const string& getOcupatie() const;
 
 
-    virtual void afiseazaProfil() const = 0;
+    virtual void afiseazaProfil() const;
 
     friend ostream& operator<<(ostream& os, const Persoana& pers);
     friend istream& operator>>(istream& is, Persoana& pers);

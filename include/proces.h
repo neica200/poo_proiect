@@ -7,6 +7,13 @@ enum class TipProces {
 
 class Proces {
     TipProces tip;
+    public:
+    Proces(TipProces tip);
+    [[nodiscard]] TipProces getTip() const {
+        return tip;
+    };
 };
+
+
 
 #endif //PROCES_H
