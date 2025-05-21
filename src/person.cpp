@@ -23,6 +23,18 @@ Persoana& Persoana::operator=(const Persoana &pers2) {
 
 Persoana::~Persoana() {}
 
+const string &Persoana::getNume() const {
+    return nume;
+}
+
+int Persoana::getVarsta() const {
+    return varsta;
+}
+
+const string &Persoana::getOcupatie() const {
+    return ocupatie;
+}
+
 
 ostream& operator<<(ostream &os, const Persoana &persoana) {
     os << "Nume: " << persoana.nume << ", Varsta: " << persoana.varsta << ", Ocupatie: " << persoana.ocupatie;

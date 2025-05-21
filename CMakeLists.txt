@@ -132,7 +132,39 @@ FetchContent_MakeAvailable(googletest)
 # NOTE: update executable name in .github/workflows/cmake.yml:25 when changing name here
 add_executable(${MAIN_EXECUTABLE_NAME} main.cpp ${SOURCES}
         include/person.h
-        src/person.cpp)
+        src/person.cpp
+        include/judecator.h
+        include/proces.h
+        src/judecator.cpp
+        include/judecator_sever.h
+        src/judecator_sever.cpp
+        include/judecator_empatic.h
+        src/judecator_empatic.cpp
+        include/judecator_echilibrat.h
+        src/judecator_echilibrat.cpp
+        include/avocat.h
+        src/avocat.cpp
+        include/acuzat.h
+        src/acuzat.cpp
+        include/inculpat.h
+        include/parat.h
+        src/inculpat.cpp
+        src/parat.cpp
+        include/reclamant.h
+        src/reclamant.cpp
+        include/martor.h
+        src/martor.cpp
+        include/proba.h
+        include/lista_elemente.h
+        src/proba.cpp
+        include/proba_document.h
+        src/proba_document.cpp
+        include/proba_audio.h
+        src/proba_audio.cpp
+        include/proba_martor.h
+        src/proba_martor.cpp
+        include/strategie.h
+)
 
 # NOTE: Add all defined targets (e.g. executables, libraries, etc. )
 # NOTE: RUN_SANITIZERS is optional, if it's not present it will default to true

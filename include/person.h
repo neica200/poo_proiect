@@ -4,8 +4,9 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
 class Persoana {
-protected:
+private:
     string nume;
     int varsta;
     string ocupatie;
@@ -15,6 +16,12 @@ public:
     Persoana(const Persoana& pers2);
     Persoana& operator=(const Persoana& pers2);
     virtual ~Persoana();
+
+    //getter
+    const string& getNume() const;
+    int getVarsta() const;
+    const string& getOcupatie() const;
+
 
     virtual void afiseazaProfil() const = 0;
 
