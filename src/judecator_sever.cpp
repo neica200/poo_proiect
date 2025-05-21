@@ -2,8 +2,8 @@
 #include <iostream>
 using namespace std;
 
-JudecatorSever::JudecatorSever(const string &nume, int varsta, const string &ocupatie, int aniExp, Specializare spec) :
-Judecator(nume, varsta, "Judecator", aniExp, spec){}
+JudecatorSever::JudecatorSever(const string &nume, int varsta, int aniExp, Specializare spec) :
+Judecator(nume, varsta, aniExp, spec){}
 
 void JudecatorSever::analizeazaProbe() const {
     cout<<"Judecatorul sever analizeaza probele cu mare atentie si strictete.\n";

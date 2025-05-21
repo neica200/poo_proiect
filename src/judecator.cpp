@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-Judecator::Judecator(const string &nume, int varsta, const string &ocupatie, int aniExp, Specializare spec) :
+Judecator::Judecator(const string &nume, int varsta, int aniExp, Specializare spec) :
     Persoana(nume,varsta,"Judecator"), aniExperienta(aniExp),specializare(spec){}
 
 Judecator::Judecator(const Judecator &ju) :

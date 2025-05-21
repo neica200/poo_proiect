@@ -2,8 +2,8 @@
 #include <iostream>
 using namespace std;
 
-JudecatorEmpatic::JudecatorEmpatic(const string &nume, int varsta, const string &ocupatie, int aniExp, Specializare spec) :
-Judecator(nume, varsta, "Judecator", aniExp, spec){}
+JudecatorEmpatic::JudecatorEmpatic(const string &nume, int varsta, int aniExp, Specializare spec) :
+Judecator(nume, varsta, aniExp, spec){}
 
 void JudecatorEmpatic::analizeazaProbe() const {
     cout<<"Judecatorul empatic analizeaza probele cu mare atentie,dar cauta cauze atenunate.\n";

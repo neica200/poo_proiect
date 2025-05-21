@@ -19,7 +19,7 @@ protected:
     Specializare specializare;
 public:
     Judecator(const string& nume = "", int varsta = 0,
-         const string& ocupatie="Judecator", int aniExp = 0, Specializare spec = Specializare::Civil);
+          int aniExp = 0, Specializare spec = Specializare::Civil);
     Judecator(const Judecator& ju);
     Judecator& operator=(const Judecator& ju);
     virtual ~Judecator();
