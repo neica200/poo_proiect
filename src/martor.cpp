@@ -1,5 +1,7 @@
 #include "martor.h"
 
+#include "acuzat.h"
+
 Martor::Martor(const string &nume, int varsta, const string &ocupatie, const string &declaratie, bool credibilitate,ParteSustinuta parte):
     Persoana(nume, varsta, ocupatie),parte(parte),declaratie(declaratie),credibilitate(credibilitate)
 {}
@@ -20,10 +22,12 @@ bool Martor::getCredibilitate() const {
 ostream& operator<<(ostream& os, const Martor& m) {
     os << static_cast<const Persoana&>(m) << " | Declaratie: " << m.getDeclaratie()<<"sustine: ";
     switch (m.getParte()) {
-        case 0:
+        case ParteSustinuta::Acuzat:
             os << "acuzat";
-        else:
-            os<<"reclamant"
+            break;
+        case ParteSustinuta::Reclamant:
+            os<<"reclamant";
+            break;
     }
     return os;
 }
