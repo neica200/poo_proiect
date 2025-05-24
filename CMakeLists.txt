@@ -170,6 +170,8 @@ add_executable(${MAIN_EXECUTABLE_NAME} main.cpp ${SOURCES}
         src/strategie_emotionanta.cpp
         include/strategie_echilibrata.h
         src/strategie_echilibrata.cpp
+        src/strategie.cpp
+        src/proces.cpp
 )
 
 # NOTE: Add all defined targets (e.g. executables, libraries, etc. )

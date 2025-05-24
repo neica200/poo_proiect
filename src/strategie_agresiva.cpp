@@ -1,4 +1,5 @@
 #include "strategie_agresiva.h"
+
 #include <sstream>
 
 string StrategieAgresiva::oferaSfat(const Acuzat &acuzat, const ListaElemente<Proba> &probe, const Judecator &judecator, const Proces &tip) {
@@ -16,7 +17,7 @@ string StrategieAgresiva::oferaSfat(const Acuzat &acuzat, const ListaElemente<Pr
     }
 
     if(probe.size()>2) {
-        sfat<<"- Aduce în discuție fiecare proba, inclusiv pe cele mai slabe, pentru a destabiliza cazul acuzării.\n";
+        sfat<<"- Adu în discuție fiecare proba, inclusiv pe cele mai slabe, pentru a destabiliza cazul acuzării.\n";
 
     }
 
@@ -37,5 +38,74 @@ string StrategieAgresiva::oferaSfat(const Acuzat &acuzat, const ListaElemente<Pr
         sfat << "- Insistă pe lipsa de dovezi clare și pe nevinovăția prezumată.\n";
 
     return sfat.str();
+}
+
+void StrategieAgresiva::seteazaScoruri(std::map<std::string, int>& actiuni,
+                                          const Acuzat& acuzat,
+                                          const ListaElemente<Proba>& probe,
+                                          const Judecator& judecator,
+                                          const Proces& tip) {
+    if (!acuzat.esteVinovat()) {
+        actiuni["Pledeaza nevinovat"] += 2;
+        actiuni["Incearca sa empatizezi cu judecatorul fiind cooperant si sincer"] += 3;
+        actiuni["Recunoaste partial si justifica contextul"]-=2;
+    }
+    else {
+        actiuni["Recunoaste partial si justifica contextul"]+=2;
+        actiuni["Pledeaza nevinovat"] -=2;
+        actiuni["Incearca sa empatizezi cu judecatorul fiind cooperant si sincer"] -=2;
+    }
+
+    for (const auto& proba : probe) {
+        if (proba->get_denumire() == "martor" && proba->importanta() > 5 && proba->esteValida()) {
+            actiuni["Cheama un martor din partea ta"] += 2;
+            actiuni["Incearca sa empatizezi cu judecatorul fiind cooperant si sincer"] += 1;
+        }
+        else {
+            actiuni["Cheama un martor din partea ta"] -=2;
+        }
+
+        if(proba->importanta() > 5 && proba->esteValida())
+            actiuni["Contesta validitatea probelor"] -=2;
+        else
+            actiuni["Contesta validitatea probelor"] +=2;
+    }
+
+
+
+    if (acuzat.getVarsta() < 25 || acuzat.getVarsta() > 60) {
+        actiuni["Vorbeste despre varsta si lipsa antecedentelor"] += 2;
+    }
+    else {
+        actiuni["Vorbeste despre varsta si lipsa antecedentelor"] -=2;
+    }
+
+    if(acuzat.getVarsta() <18)
+        actiuni["Vorbeste despre lipsa de discernamant"] +=2;
+    else
+        actiuni["Vorbeste despre lipsa de discernamant"] -=2;
+
+
+    if (judecator.getStil() == "Empatic") {
+        actiuni["Incearca sa empatizezi cu judecatorul fiind cooperant si sincer"] += 3;
+    } else if (judecator.getStil() == "Echilibrat") {
+        actiuni["Incearca sa empatizezi cu judecatorul fiind cooperant si sincer"] += 2;
+    }
+
+    if(judecator.getVarsta() < 5) {
+        actiuni["Incearca sa manipulezi judecatorul"] +=2;
+    }
+    else {
+        actiuni["Incearca sa manipulezi judecatorul"] -=3;
+    }
+
+    if (tip.getTip() == TipProces::Civil) {
+        actiuni["Recunoaste partial si justifica contextul"] += 1;
+        actiuni["Incearca sa empatizezi cu judecatorul fiind cooperant si sincer"] += 1;
+    }
+}
+
+void StrategieAgresiva::aplicaActiune(string& optiune) {
+    Proces::setScor(actiuniDisponibile[optiune]);
 }
 

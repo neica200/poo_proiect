@@ -7,13 +7,12 @@ enum class TipProces {
 
 class Proces {
     TipProces tip;
-    public:
-    Proces(TipProces tip);
-    [[nodiscard]] TipProces getTip() const {
-        return tip;
-    };
+    static int scor;
+
+public:
+    Proces(TipProces tip = TipProces::Civil);
+    [[nodiscard]] TipProces getTip() const;
+    static void setScor(int s);
 };
-
-
 
 #endif //PROCES_H
