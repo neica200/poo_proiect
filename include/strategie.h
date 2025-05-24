@@ -1,7 +1,7 @@
 #ifndef STRATEGIE_H
 #define STRATEGIE_H
 
-#include <memory>
+
 #include "acuzat.h"
 #include "judecator.h"
 #include "proces.h"

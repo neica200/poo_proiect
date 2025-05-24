@@ -21,8 +21,8 @@ const string &Acuzat::getSentinta() const {
     return sentinta;
 }
 
-void Acuzat::seteazaSentinta(const string &sentinta) {
-    this->sentinta = sentinta;
+void Acuzat::seteazaSentinta(const string &sent) {
+    sentinta = sent;
 }
 
 void Acuzat::afiseazaProfil() const {

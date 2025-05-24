@@ -16,7 +16,7 @@ public:
     [[nodiscard]] const string& getAcuzatie() const;
     [[nodiscard]] bool esteVinovat() const;
     [[nodiscard]] const string& getSentinta() const;
-    void seteazaSentinta(const string& sentinta);
+    void seteazaSentinta(const string& sent);
     virtual void reactioneazaLaSentinta() const = 0;
     void afiseazaProfil() const override;
 

@@ -8,9 +8,9 @@
 
 class ProbaMartor : public Proba {
 private:
-  shared_ptr<Martor> martor;
   bool credibilitate;
   int relevantaDeclaratie;
+  shared_ptr<Martor> martor;
 public:
   ProbaMartor(const string& denumire, bool credibilitate, int relevanta,const shared_ptr<Martor>& martor);
 

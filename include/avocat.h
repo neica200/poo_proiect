@@ -3,7 +3,6 @@
 
 #include "person.h"
 #include "acuzat.h"
-#include <vector>
 #include <memory>
 
 #include "lista_elemente.h"
