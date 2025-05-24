@@ -10,7 +10,7 @@ Judecator::Judecator(const Judecator &ju) :
 
 Judecator& Judecator::operator=(const Judecator &ju) {
     if(this !=&ju) {
-        Persoana:operator=(ju);
+        Persoana::operator=(ju);
         aniExperienta = ju.aniExperienta;
         specializare = ju.specializare;
     }
