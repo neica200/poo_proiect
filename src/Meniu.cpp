@@ -137,10 +137,10 @@ void Meniu::creeazaProcesManual() {
                 string descriere;
                 cout<<"Descriere: ";
                 cin>>descriere;
-                string tip;
+                string tipDoc;
                 cout<<"Tip document: ";
-                cin>>tip;
-                probe.adauga(make_shared<ProbaDocument>(descriere,tip));
+                cin>>tipDoc;
+                probe.adauga(make_shared<ProbaDocument>(descriere,tipDoc));
                 continue;
             }
             cout<<"Valoare invalida, incearca din nou";
@@ -216,7 +216,7 @@ void Meniu::ruleazaTurnBased(DateProces dp) {
         string sfat;
         try {
             sfat = dp.avocat->oferaSfat(dp.proces->getAcuzat(),dp.proces->getProbe(),dp.proces->getJudecator(),*(dp.proces));
-        }catch(const exception& e) {
+        }catch(...) {
             sfat = "Niciun sfat disponibil";
         }
         cout<<"\n Sfatul avocatului: "<<sfat<<"\n\n";
