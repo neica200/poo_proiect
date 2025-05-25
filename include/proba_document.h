@@ -10,7 +10,7 @@ public:
     string get_denumire() const override;
     string descriere() const  override;
     int importanta() const override;
-    void validare() override;
+
 
 };
 

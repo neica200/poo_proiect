@@ -29,9 +29,7 @@ string ProbaDocument::get_denumire() const {
 }
 
 
-void ProbaDocument::validare() {
-    valida = tipDocument.length() > 3;
-}
+
 
 
 

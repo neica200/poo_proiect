@@ -14,7 +14,7 @@ public:
     virtual string get_denumire() const = 0;
     virtual string descriere() const =0;
     virtual int importanta() const = 0;
-    virtual void validare() = 0;
+
 
     bool esteValida() const;
 

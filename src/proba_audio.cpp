@@ -31,9 +31,6 @@ string ProbaAudio::get_denumire() const {
 }
 
 
-void ProbaAudio::validare() {
-    valida = claritate >=5 && durata>10;
-}
 
 int ProbaAudio::getDurata() const {
     return durata;

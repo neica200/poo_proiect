@@ -24,9 +24,7 @@ int ProbaMartor::importanta() const {
     return scor;
 }
 
-void ProbaMartor::validare() {
-    valida = credibilitate && relevantaDeclaratie > 4;
-}
+
 
 
 
