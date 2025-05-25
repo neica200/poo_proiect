@@ -1,5 +1,4 @@
 #include "proces.h"
-using namespace std;
 
 int Proces::scor = 0;
 
