@@ -43,7 +43,7 @@ const Judecator& Proces::getJudecator() const {
     return *judecator;
 }
 
-const ListaElemente<Proba> Proces::getProbe() const {
+const ListaElemente<Proba>& Proces::getProbe() const {
     return probe;
 }
 

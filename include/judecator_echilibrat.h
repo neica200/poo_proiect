@@ -6,7 +6,7 @@ using namespace std;
 
 class JudecatorEchilibrat : public Judecator {
 public:
-    JudecatorEchilibrat(const string& nume = "", int varsta = 0,
+    explicit JudecatorEchilibrat(const string& nume = "", int varsta = 0,
           int aniExp = 0, Specializare spec = Specializare::Civil);
     void analizeazaProbe() const override;
     void audiazaMartori() const override;

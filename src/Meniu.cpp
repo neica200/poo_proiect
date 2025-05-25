@@ -1,5 +1,6 @@
 #include "judecator_empatic.h"
 #include "judecator_sever.h"
+#include "judecator_echilibrat.h"
 #include "meniu_singleton.h"
 #include "proba_audio.h"
 #include "proba_document.h"
@@ -186,7 +187,7 @@ void Meniu::creeazaProcesRandom() {
 
 }
 
-void Meniu::vizualizeazaProbe(const ListaElemente<Proba> probe) const {
+void Meniu::vizualizeazaProbe(const ListaElemente<Proba> &probe) const {
     if (probe.size() == 0) {
         cout << "Nu există probe în proces.\n";
         return;

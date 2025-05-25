@@ -6,7 +6,7 @@ using namespace std;
 
 class JudecatorEmpatic : public Judecator {
 public:
-    JudecatorEmpatic(const string& nume = "", int varsta = 0,
+    explicit JudecatorEmpatic(const string& nume = "", int varsta = 0,
           int aniExp = 0, Specializare spec = Specializare::Civil);
     void analizeazaProbe() const override;
     void audiazaMartori() const override;

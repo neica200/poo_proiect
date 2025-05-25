@@ -20,7 +20,7 @@ public:
 
 
     void ruleazaTurnBased(DateProces dp);
-    void vizualizeazaProbe(ListaElemente<Proba> probe) const ;
+    void vizualizeazaProbe(const ListaElemente<Proba> &probe) const ;
 
 
 };

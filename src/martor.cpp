@@ -6,7 +6,7 @@ Martor::Martor(const string &nume, int varsta, const string &ocupatie, const str
     Persoana(nume, varsta, ocupatie),parte(parte),declaratie(declaratie),credibilitate(credibilitate)
 {}
 
-string Martor::getDeclaratie() const {
+const string& Martor::getDeclaratie() const {
     return declaratie;
 }
 

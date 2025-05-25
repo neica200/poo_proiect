@@ -6,7 +6,7 @@
 #include "judecator.h"
 #include "lista_elemente.h"
 #include "proba.h"
-#include "judecator_echilibrat.h"
+
 
 enum class TipProces {
     Penal,Civil
@@ -21,7 +21,7 @@ class Proces {
     static int scor;
 
 public:
-    Proces(TipProces t = TipProces::Civil,const Acuzat& a = Acuzat(), /*const Avocat& av*/const shared_ptr<Judecator>& j = nullptr,
+    explicit Proces(TipProces t = TipProces::Civil,const Acuzat& a = Acuzat(), /*const Avocat& av*/const shared_ptr<Judecator>& j = nullptr,
            const ListaElemente<Proba>& p = ListaElemente<Proba>());
 
     void setTipProces(TipProces tip);
@@ -35,9 +35,9 @@ public:
     [[nodiscard]] TipProces getTip() const;
     Acuzat& getAcuzat() ;
     //Avocat& getAvocat() ;
-    const Judecator& getJudecator() const;
-    const ListaElemente<Proba> getProbe() const;
-    int getScor() const;
+    [[nodiscard]] const Judecator& getJudecator() const;
+    [[nodiscard]] const ListaElemente<Proba>& getProbe() const;
+    [[nodiscard]] int getScor() const;
 
     void resetProces();
 

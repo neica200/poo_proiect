@@ -15,7 +15,7 @@ private:
 public:
     Martor(const string& nume, int varsta, const string& ocupatie, const string& declaratie, bool credibilitate, ParteSustinuta parte);
 
-    [[nodiscard]] string getDeclaratie() const;
+    [[nodiscard]] const string& getDeclaratie() const;
     [[nodiscard]] bool getCredibilitate() const;
     ParteSustinuta getParte() const;
     friend std::ostream& operator<<(std::ostream& out, const Martor& m);
