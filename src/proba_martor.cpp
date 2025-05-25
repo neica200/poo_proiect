@@ -28,9 +28,7 @@ void ProbaMartor::validare() {
     valida = credibilitate && relevantaDeclaratie > 4;
 }
 
-int ProbaMartor::getRelevanta() const {
-    return relevantaDeclaratie;
-}
+
 
 
 

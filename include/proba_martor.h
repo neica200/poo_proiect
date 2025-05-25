@@ -22,7 +22,6 @@ public:
     return "martor";
   }
 
-  int getRelevanta() const;
 
 
 };

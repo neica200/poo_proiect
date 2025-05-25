@@ -31,7 +31,6 @@ public:
     void setProbe(ListaElemente<Proba> p);
     static void setScor(int s);
 
-    void afiseazaRezultatFinal() const;
 
     [[nodiscard]] TipProces getTip() const;
     Acuzat& getAcuzat() ;

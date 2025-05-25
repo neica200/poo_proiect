@@ -61,14 +61,5 @@ void Proces::resetProces() {
 
 
 
-void Proces::afiseazaRezultatFinal() const{
-    if(scor<10) {
-        cout<<"Ai fost gasit vinovat";
-
-    } else {
-        cout<<"Ai fost gasit nevinovat";
-    }
-
-}
 
 
