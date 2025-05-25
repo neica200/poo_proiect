@@ -1,5 +1,5 @@
 #include "proces_factory.h"
-
+#include "judecator_echilibrat.h"
 #include "judecator_empatic.h"
 #include "judecator_sever.h"
 #include "proba_audio.h"
