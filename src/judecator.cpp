@@ -17,7 +17,7 @@ Judecator& Judecator::operator=(const Judecator &ju) {
     return *this;
 }
 
-Judecator::~Judecator() {}
+
 
 void Judecator::afiseazaProfil() const {
     Persoana::afiseazaProfil();

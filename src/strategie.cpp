@@ -1,5 +1,6 @@
 #include "strategie.h"
 
+
 map <string,int> Strategie::actiuniDisponibile = {
     {"Recunoaste partial si justifica contextul", 0},
         {"Pledeaza nevinovat", 0},
@@ -12,8 +13,13 @@ map <string,int> Strategie::actiuniDisponibile = {
         {"Cheama un martor din partea ta", 0}
 };
 
+map<string, int> Strategie::paseazaActiuni() {
+    return Strategie::actiuniDisponibile;
+}
+
+
 void Strategie::getActiuniDisponibile() {
-    cout << "Ce vrei sa faci:\n";
+    cout << "\nCe vrei sa faci:\n";
     int index = 1;
     for (const auto& [actiune, _] : Strategie::actiuniDisponibile) {
         std::cout << index++ << ". " << actiune << "\n";

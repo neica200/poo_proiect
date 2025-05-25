@@ -1,8 +1,12 @@
 #include <iostream>
 #include <array>
 
+#include "meniu_singleton.h"
+#include "acuzat.h"
 int main() {
-    std::cout << "Hello, world!\n";
+    auto &x = Meniu::getInstance();
+    x.ruleazaMeniu();
+    /*std::cout << "Hello, world!\n";
     std::array<int, 100> v{};
     int nr;
     std::cout << "Introduceți nr: ";
@@ -43,6 +47,6 @@ int main() {
     /// Exemplu:
     /// std::ifstream fis("date.txt");
     /// for(int i = 0; i < nr2; ++i)
-    ///     fis >> v2[i];
+    ///     fis >> v2[i];*/
     return 0;
 }

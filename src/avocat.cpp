@@ -1,12 +1,15 @@
 #include "avocat.h"
 
 #include "strategie_agresiva.h"
+#include "strategie_echilibrata.h"
+#include "strategie_emotionanta.h"
 using namespace std;
 
 
-Avocat::Avocat(const string &nume, int varsta) : Persoana(nume, varsta,"Avocat"), cazuriCastigate(0),strategie(nullptr) {}
+Avocat::Avocat(const string &nume, int varsta,int cazuriCastigate) : Persoana(nume, varsta,"Avocat"), cazuriCastigate(cazuriCastigate),strategie(nullptr) {}
 
-void Avocat::seteazaStrategie(const shared_ptr<Strategie> s) {
+
+void Avocat::seteazaStrategie(const shared_ptr<Strategie>& s) {
     strategie = s;
 }
 
@@ -20,11 +23,11 @@ void Avocat::aplicaActiune(string &actiune) {
         strategie->aplicaActiune(actiune);
 }
 
-
-
-void Avocat::adaugaClient(const shared_ptr<Acuzat>& acuzat) {
-    clienti.adauga(acuzat);
+shared_ptr<Strategie> Avocat::getStrategie() const{
+    return strategie;
 }
+
+
 
 void Avocat::castigaProces() {
     cazuriCastigate++;
@@ -43,12 +46,30 @@ string Avocat::oferaSfat(const Acuzat &acuzat, const ListaElemente<Proba> &probe
 
 void Avocat::afiseazaProfil() const {
     Persoana::afiseazaProfil();
-    cout<<"Cazuri castigate: "<<cazuriCastigate<<" Clienti: ";
-    for (auto& c: clienti) {
-        cout<<" - "<<c->getNume();
-    }
+    cout<<" Cazuri castigate: "<<cazuriCastigate<<" Clienti: ";
 
 }
+
+void Avocat::seteazaCazuri(int i) {
+    cazuriCastigate = i;
+}
+
+
+shared_ptr<Strategie> Avocat::getStrategie() {
+    return strategie;
+}
+
+
+istream &operator>>(istream &is, Avocat &avocat) {
+    is>> static_cast<Persoana &>(avocat);
+    cout<<"Cazuri castigate: ";
+    int i;
+    cin>> i;
+    avocat.seteazaCazuri(i);
+
+    return is;
+}
+
 
 
 

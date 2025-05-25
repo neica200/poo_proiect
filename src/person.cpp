@@ -36,7 +36,7 @@ const string &Persoana::getOcupatie() const {
 }
 
 void Persoana::afiseazaProfil() const {
-    cout<<"Nume: "<<getNume()<<"Varsta: "<<getVarsta();
+    cout<<"Nume: "<<getNume()<<" Varsta: "<<getVarsta();
 }
 
 

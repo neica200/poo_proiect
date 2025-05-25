@@ -8,7 +8,7 @@ protected:
     string denumire;
     bool valida;
 public:
-    Proba(const string& denumire);
+    Proba(const string& denumire = "");
     virtual ~Proba();
 
     virtual string get_denumire() const = 0;

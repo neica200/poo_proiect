@@ -12,15 +12,14 @@ private:
     string ocupatie;
 public:
     Persoana();
-    Persoana(const string& nume, int varsta, const string& ocupatie);
+    explicit Persoana(const string& nume ="", int varsta = 0, const string& ocupatie="");
     Persoana(const Persoana& pers2);
     Persoana& operator=(const Persoana& pers2);
     virtual ~Persoana();
 
-    //getter
-    const string& getNume() const;
-    int getVarsta() const;
-    const string& getOcupatie() const;
+    [[nodiscard]] const string& getNume() const;
+    [[nodiscard]] int getVarsta() const;
+    [[nodiscard]] const string& getOcupatie() const;
 
 
     virtual void afiseazaProfil() const;

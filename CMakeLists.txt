@@ -146,12 +146,6 @@ add_executable(${MAIN_EXECUTABLE_NAME} main.cpp ${SOURCES}
         src/avocat.cpp
         include/acuzat.h
         src/acuzat.cpp
-        include/inculpat.h
-        include/parat.h
-        src/inculpat.cpp
-        src/parat.cpp
-        include/reclamant.h
-        src/reclamant.cpp
         include/martor.h
         src/martor.cpp
         include/proba.h
@@ -172,6 +166,10 @@ add_executable(${MAIN_EXECUTABLE_NAME} main.cpp ${SOURCES}
         src/strategie_echilibrata.cpp
         src/strategie.cpp
         src/proces.cpp
+        include/proces_factory.h
+        src/proces_factory.cpp
+        include/meniu_singleton.h
+        src/Meniu.cpp
 )
 
 # NOTE: Add all defined targets (e.g. executables, libraries, etc. )

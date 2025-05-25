@@ -23,3 +23,5 @@ string JudecatorSever::getStil() const {
 
 
 
+
+

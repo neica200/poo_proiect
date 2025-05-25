@@ -24,3 +24,5 @@ string JudecatorEmpatic::getStil() const {
 
 
 
+
+

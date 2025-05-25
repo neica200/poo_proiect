@@ -7,6 +7,8 @@ bool Proba::esteValida() const {
 
 Proba::~Proba(){}
 
+
+
 ostream &operator<<(ostream &out, const Proba &proba) {
     proba.descriere();
     return out;

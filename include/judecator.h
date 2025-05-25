@@ -2,11 +2,11 @@
 #define JUDECATOR_H
 
 #include "person.h"
-#include "proces.h"
 #include <string>
 #include <iostream>
 using namespace std;
 
+class Proces;
 enum class Specializare {
     Civil,Penal
 };
@@ -22,13 +22,12 @@ public:
           int aniExp = 0, Specializare spec = Specializare::Civil);
     Judecator(const Judecator& ju);
     Judecator& operator=(const Judecator& ju);
-    virtual ~Judecator();
+
 
     void afiseazaProfil() const override;
     virtual string getStil() const=0;
     int getExperienta() const;
 
-    virtual void solutioneazaProces(const Proces& proces) const = 0;
     virtual void analizeazaProbe() const = 0;
     virtual void audiazaMartori() const = 0;
 

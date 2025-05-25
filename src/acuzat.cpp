@@ -5,6 +5,19 @@ using namespace std;
 Acuzat::Acuzat(const string &nume, int varsta, const string &ocupatie,const string &acuzatie, bool vinovatie, const string &sentinta) :
 Persoana(nume, varsta, ocupatie), acuzatie(acuzatie),vinovatie(vinovatie), sentinta(sentinta){}
 
+Acuzat::Acuzat(const Acuzat &acuzat):Persoana(acuzat){
+    this->acuzatie = acuzat.acuzatie;
+    this -> vinovatie = acuzat.vinovatie;
+
+}
+
+
+Acuzat &Acuzat::operator=(Acuzat const &aux) {
+    this->acuzatie = aux.acuzatie;
+    return *this;
+}
+
+
 const string &Acuzat::getAcuzatie() const {
     return acuzatie;
 }
@@ -13,9 +26,6 @@ bool Acuzat::esteVinovat() const {
     return vinovatie;
 }
 
-void Acuzat::primesteSfat(const string &sfat) {
-    cout<<"Acuzatul "<< getNume()<<" primeste sfatul: "<<sfat<<endl;
-}
 
 const string &Acuzat::getSentinta() const {
     return sentinta;

@@ -3,6 +3,7 @@
 
 #include "strategie.h"
 
+
 class StrategieAgresiva :public Strategie {
 public :
     string oferaSfat(const Acuzat &acuzat, const ListaElemente<Proba> &probe, const Judecator &judecator, const Proces &tip) override;

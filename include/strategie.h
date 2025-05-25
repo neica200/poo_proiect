@@ -16,6 +16,7 @@ protected:
     static map<string,int> actiuniDisponibile;
 
     public:
+    map<string,int> paseazaActiuni();
     virtual string oferaSfat(const Acuzat& acuzat, const ListaElemente<Proba>& probe, const Judecator& judecator, const Proces& tip ) = 0;
     static void getActiuniDisponibile();
     virtual void seteazaScoruri(std::map<std::string, int>& actiuni,const Acuzat& acuzat,const ListaElemente<Proba>& probe,const Judecator& judecator,const Proces& tip) = 0;
