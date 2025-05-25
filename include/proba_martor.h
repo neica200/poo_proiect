@@ -21,9 +21,9 @@ public:
   string get_denumire() const override {
     return "martor";
   }
-  bool esteCredibil() const;
+
   int getRelevanta() const;
-  shared_ptr<Martor> getMartor() const;
+
 
 };
 

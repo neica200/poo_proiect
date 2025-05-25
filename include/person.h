@@ -19,7 +19,7 @@ public:
 
     [[nodiscard]] const string& getNume() const;
     [[nodiscard]] int getVarsta() const;
-    [[nodiscard]] const string& getOcupatie() const;
+    
 
 
     virtual void afiseazaProfil() const;

@@ -5,6 +5,8 @@ bool Proba::esteValida() const {
     return valida;
 }
 
+
+
 Proba::~Proba(){}
 
 

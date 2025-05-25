@@ -48,7 +48,7 @@ std::istream& operator>>(std::istream &is, Judecator &ju) {
     cout<<"Introdu Ani Experienta: ";
     is >> ju.aniExperienta;
 
-    cout<<"Introdu Specializare:(0-Civil, 1-Penal, introdu numarul) ";
+    cout<<"Introdu Specializare:(0-Civil, 1-Penal, introdu numarul) \n";
     int specializareInt;
     is >> specializareInt;
     if(specializareInt <0 || specializareInt > 1) {

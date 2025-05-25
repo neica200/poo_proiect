@@ -35,11 +35,6 @@ public:
     [[nodiscard]] int size() const {
         return static_cast<int>(elemente.size());
     }
-    void afiseazaToate(ostream& os = cout) const {
-        for(const auto& e : elemente) {
-            os << *e << "\n";
-        }
-    }
 
     shared_ptr<T> alegeRandom() {
         if(elemente.size() == 0)

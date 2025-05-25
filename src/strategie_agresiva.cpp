@@ -2,14 +2,16 @@
 
 #include <sstream>
 
+#include "proba_audio.h"
+
 string StrategieAgresiva::oferaSfat(const Acuzat &acuzat, const ListaElemente<Proba> &probe, const Judecator &judecator, const Proces &tip) {
     ostringstream sfat;
     sfat << "Strategie Agresiva:\n";
 
     if (acuzat.esteVinovat()) {
-        sfat << "- Recomanda recunoașterea partiala și justificarea contextului.\n";
+        sfat << "- Recomanda recunoasterea partiala si justificarea contextului.\n";
     } else {
-        sfat << "- Neaga orice acuzație și ataca argumentele acuzatorului direct.\n";
+        sfat << "- Neaga orice acuzatie și ataca argumentele acuzatorului direct.\n";
     }
 
     if(acuzat.getVarsta() < 30 && !acuzat.esteVinovat()) {
@@ -17,25 +19,25 @@ string StrategieAgresiva::oferaSfat(const Acuzat &acuzat, const ListaElemente<Pr
     }
 
     if(probe.size()>2) {
-        sfat<<"- Adu în discuție fiecare proba, inclusiv pe cele mai slabe, pentru a destabiliza cazul acuzării.\n";
+        sfat<<"- Adu în discuție fiecare proba, inclusiv pe cele mai slabe, pentru a destabiliza cazul acuzarii.\n";
 
     }
 
     for(const auto &proba : probe) {
         if(!proba->esteValida()) {
-            sfat<<"- Contestă validitatea probei \"" << proba->descriere() << "\".\n";
+            sfat<<"- Contesta validitatea probei \"" << proba->descriere() << "\".\n";
         }
         else if (proba->importanta() > 7) {
-            sfat << "- Contraargumentează proba importantă: \"" << proba->descriere() << "\".\n";
+            sfat << "- Contraargumenteaza proba importanta: \"" << proba->descriere() << "\".\n";
         }
     }
 
     if(judecator.getStil() =="Sever") {
-        sfat<<"- Atenție: stilul sever al judecătorului impune o abordare atentă.\n";
+        sfat<<"- Atentie: stilul sever al judecatorului impune o abordare atenta.\n";
     }
 
     if (tip.getTip() == TipProces::Penal)
-        sfat << "- Insistă pe lipsa de dovezi clare și pe nevinovăția prezumată.\n";
+        sfat << "- Insista pe lipsa de dovezi clare si pe nevinovatia prezumata.\n";
 
     return sfat.str();
 }
@@ -69,6 +71,16 @@ void StrategieAgresiva::seteazaScoruri(std::map<std::string, int>& actiuni,
             actiuni["Contesta validitatea probelor"] -=2;
         else
             actiuni["Contesta validitatea probelor"] +=2;
+
+        if(proba -> get_denumire() == "inregistrare") {
+            auto p = dynamic_pointer_cast<ProbaAudio>(proba);
+            if(p->getClaritate() >5 && p->getDurata()>60) {
+                actiuni["Contesta validitatea probelor"] -=2;
+            }
+            else
+                actiuni["Contesta validitatea probelor"] +=2;
+
+        }
     }
 
 

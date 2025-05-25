@@ -23,9 +23,9 @@ ProcesFactory::ProcesFactory() {
     acuzatiDisponibili += make_shared<Acuzat>("Ion Popescu", 45, "Muncitor", "Furt calificat", false);
     acuzatiDisponibili += make_shared<Acuzat>("Elena Vasile", 28, "Contabila", "Frauda", true);
     acuzatiDisponibili += make_shared<Acuzat>("Mihai Georgescu", 33, "Sofer", "Lovire", false);
-    acuzatiDisponibili += make_shared<Acuzat>("Ana Marin", 19, "Studentă", "Vătămare corporală", true);
+    acuzatiDisponibili += make_shared<Acuzat>("Ana Marin", 19, "Studenta", "Vatamare corporala", true);
     acuzatiDisponibili += make_shared<Acuzat>("Mihai Pop", 16, "Elev", "Furt", false);
-    acuzatiDisponibili += make_shared<Acuzat>("Ana Georgescu", 17, "Studentă", "Vătămare corporală", true);
+    acuzatiDisponibili += make_shared<Acuzat>("Ana Georgescu", 17, "Studenta", "Vatamare corporală", true);
 
 
     avocatiDisponibili+=make_shared<Avocat>("Teodora Maria",25,5);
@@ -43,25 +43,25 @@ ProcesFactory::ProcesFactory() {
     judecatoriDisponibili += make_shared<JudecatorSever>("Cristina Iliescu", 48, 22, Specializare::Penal);
 
     martoriDisponibili+= make_shared<Martor>("Andreea Capitanu",26,"Profesoara","Eram langa acuzat la momentul comiterii infractiunii",1,ParteSustinuta::Acuzat);
-    martoriDisponibili += make_shared<Martor>("George Florescu", 34, "Șofer taxi", "Am văzut totul de la geam", 1, ParteSustinuta::Acuzat);
-    martoriDisponibili += make_shared<Martor>("Livia Petrescu", 40, "Farmacistă", "Eram la farmacie când s-a întâmplat", 0, ParteSustinuta::Reclamant);
-    martoriDisponibili += make_shared<Martor>("Alexandru Moldovan", 29, "Vânzător", "Am auzit țipetele", 1, ParteSustinuta::Reclamant);
-    martoriDisponibili += make_shared<Martor>("Simona Iancu", 37, "Educatoare", "Era foarte nervos înainte de incident", 0, ParteSustinuta::Acuzat);
+    martoriDisponibili += make_shared<Martor>("George Florescu", 34, "Sofer taxi", "Am văzut totul de la geam", 1, ParteSustinuta::Acuzat);
+    martoriDisponibili += make_shared<Martor>("Livia Petrescu", 40, "Farmacista", "Eram la farmacie când s-a intamplat", 0, ParteSustinuta::Reclamant);
+    martoriDisponibili += make_shared<Martor>("Alexandru Moldovan", 29, "Vanzator", "Am auzit țipetele", 1, ParteSustinuta::Reclamant);
+    martoriDisponibili += make_shared<Martor>("Simona Iancu", 37, "Educatoare", "Era foarte nervos inainte de incident", 0, ParteSustinuta::Acuzat);
 
     probeDisponibile+=make_shared<ProbaMartor>("Declaratie Martor",true,5,martoriDisponibili.getElement(0));
-    probeDisponibile += make_shared<ProbaMartor>("Declarație martor taxi", true, 6, martoriDisponibili.getElement(1));
-    probeDisponibile += make_shared<ProbaMartor>("Declarație martor farmacie", false, 5, martoriDisponibili.getElement(2));
-    probeDisponibile += make_shared<ProbaMartor>("Declarație martor vânzător", true, 7, martoriDisponibili.getElement(3));
-    probeDisponibile += make_shared<ProbaMartor>("Declarație martor educatoare", true, 4, martoriDisponibili.getElement(4));
+    probeDisponibile += make_shared<ProbaMartor>("Declaratie martor taxi", true, 6, martoriDisponibili.getElement(1));
+    probeDisponibile += make_shared<ProbaMartor>("Declaratie martor farmacie", false, 5, martoriDisponibili.getElement(2));
+    probeDisponibile += make_shared<ProbaMartor>("Declaratie martor vanzator", true, 7, martoriDisponibili.getElement(3));
+    probeDisponibile += make_shared<ProbaMartor>("Declaratie martor educatoare", true, 4, martoriDisponibili.getElement(4));
 
-    probeDisponibile += make_shared<ProbaAudio>("Înregistrare telefon", 120, 9);
-    probeDisponibile += make_shared<ProbaAudio>("Înregistrare interfon", 45, 6);
-    probeDisponibile+=make_shared<ProbaAudio>("Inregistrare",60,7);
+    probeDisponibile += make_shared<ProbaAudio>("inregistrare", 120, 9);
+    probeDisponibile += make_shared<ProbaAudio>("inregistrare", 45, 6);
+    probeDisponibile+=make_shared<ProbaAudio>("inregistrare",60,7);
 
     probeDisponibile+=make_shared<ProbaDocument>("Contract de vanzare-cumparare","contract");
-    probeDisponibile += make_shared<ProbaDocument>("Certificat de naștere", "document oficial");
-    probeDisponibile += make_shared<ProbaDocument>("Contract de închiriere", "contract");
-    probeDisponibile += make_shared<ProbaDocument>("Raport expertiză", "expertiză");
+    probeDisponibile += make_shared<ProbaDocument>("Certificat de nastere", "document oficial");
+    probeDisponibile += make_shared<ProbaDocument>("Contract de inchiriere", "contract");
+    probeDisponibile += make_shared<ProbaDocument>("Raport expertiza", "expertiza");
     probeDisponibile += make_shared<ProbaDocument>("Proces verbal", "document oficial");
     probeDisponibile += make_shared<ProbaDocument>("Factura", "factura");
 

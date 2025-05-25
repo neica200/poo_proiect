@@ -20,7 +20,7 @@ bool Martor::getCredibilitate() const {
 }
 
 ostream& operator<<(ostream& os, const Martor& m) {
-    os << static_cast<const Persoana&>(m) << " | Declaratie: " << m.getDeclaratie()<<"sustine: ";
+    os << static_cast<const Persoana&>(m) << " | Declaratie: " << m.getDeclaratie()<<"| Credibilitate: "<<m.getCredibilitate()<<" sustine: ";
     switch (m.getParte()) {
         case ParteSustinuta::Acuzat:
             os << "acuzat";

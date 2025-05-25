@@ -28,14 +28,6 @@ void ProbaMartor::validare() {
     valida = credibilitate && relevantaDeclaratie > 4;
 }
 
-bool ProbaMartor::esteCredibil() const {
-    return credibilitate;
-}
-
-shared_ptr<Martor> ProbaMartor::getMartor() const{
-    return martor;
-}
-
 int ProbaMartor::getRelevanta() const {
     return relevantaDeclaratie;
 }

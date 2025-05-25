@@ -22,10 +22,10 @@ void Meniu::afiseazaMeniu() const {
 }
 
 void Meniu::creeazaProcesManual() {
-    cout<<"\n--- CREARE MANUALĂ PROCES ---\n";
+    cout<<"\n--- CREARE MANUALA PROCES ---\n";
     TipProces tip;
     while(true) {
-        cout<<"Tip proces (0 - Civil, 1 - Penal)";
+        cout<<"Tip proces (0 - Civil, 1 - Penal)\n";
         int tipInt;
         cin>>tipInt;
         if(!cin.fail() && (tipInt == 0 || tipInt == 1)) {
@@ -37,7 +37,7 @@ void Meniu::creeazaProcesManual() {
         cin.ignore(numeric_limits<std::streamsize>::max(), '\n');
     }
 
-    cout<<"\nIntrodu datele acuzatului: ";
+    cout<<"\nIntrodu datele acuzatului:\n ";
     Acuzat acuzat1;
     while(true) {
         cin>>acuzat1;
@@ -47,7 +47,7 @@ void Meniu::creeazaProcesManual() {
         cin.ignore(numeric_limits<std::streamsize>::max(), '\n');
     }
 
-    cout<<"\nIntrodu stilul judecatorului(0 - Sever, 1 - Empatic, 2 - Echilibrat)";
+    cout<<"\nIntrodu stilul judecatorului(0 - Sever, 1 - Empatic, 2 - Echilibrat)\n";
     int tipIntJ;
     cin>>tipIntJ;
     cout<<"Introdu datele judecatorului\n";
@@ -94,7 +94,7 @@ void Meniu::creeazaProcesManual() {
         cin.ignore(numeric_limits<std::streamsize>::max(), '\n');
     }
     int j;
-    cout<<"Ce strategie vrei sa foloseasca?(0 - Agresiva, 1 - Echilibrata, 2 - Empatica";
+    cout<<"Ce strategie vrei sa foloseasca?(0 - Agresiva, 1 - Echilibrata, 2 - Empatica)\n";
     cin>>j;
     switch(j) {
         case 0:
@@ -188,7 +188,7 @@ void Meniu::creeazaProcesRandom() {
 
 void Meniu::vizualizeazaProbe(const ListaElemente<Proba> probe) const {
     if (probe.size() == 0) {
-        std::cout << "Nu există probe în proces.\n";
+        cout << "Nu există probe în proces.\n";
         return;
     }
 
@@ -202,10 +202,10 @@ void Meniu::vizualizeazaProbe(const ListaElemente<Proba> probe) const {
                   return a->importanta() > b->importanta();
               });
 
-    std::cout << "\nProbe sortate după importanță:\n";
+    cout << "\nProbe sortate după importanta:\n";
     for (size_t i = 0; i < temp.size(); ++i) {
-        std::cout << "[" << i << "] ";
-        temp[i]->descriere();
+        cout << "[" << i << "] ";
+        cout<<temp[i]->descriere();
         std::cout << "\n";
     }
 }
@@ -219,13 +219,13 @@ void Meniu::ruleazaTurnBased(DateProces dp) {
         }catch(...) {
             sfat = "Niciun sfat disponibil";
         }
-        cout<<"\n Sfatul avocatului: "<<sfat<<"\n\n";
+        cout<<"\n Sfatul avocatului: \n"<<sfat<<"\n\n";
 
         cout<<"Optiuni: \n";
-        cout << "1. Aplică acțiune\n";
-        cout << "2. Vezi probe sortate după importanță\n";
-        cout << "0. Termină procesul\n";
-        cout << "Alege opțiunea: ";
+        cout << "1. Aplica actiune\n";
+        cout << "2. Vezi probe sortate dupa importanta\n";
+        cout << "0. Termina procesul\n";
+        cout << "Alege optiunea: ";
 
         int alegere;
         cin>>alegere;
@@ -237,7 +237,21 @@ void Meniu::ruleazaTurnBased(DateProces dp) {
             continue;
         }
         if(alegere == 0) {
-            dp.proces->afiseazaRezultatFinal();
+            if(dp.proces->getScor()<10) {
+                dp.proces->getAcuzat().seteazaSentinta("Vinovat");
+                cout<<"Ai fost gasit: "<<dp.proces->getAcuzat().getSentinta();
+                cout<<"\n";
+
+            } else {
+                cout<<"Ai fost gasit nevinovat";
+                dp.avocat->castigaProces();
+                dp.proces->getAcuzat().seteazaSentinta("Nevinovat");
+                cout<<"Ai fost gasit: "<<dp.proces->getAcuzat().getSentinta();
+                cout<<"Un nou proces castigat pentru avocat: "<<dp.avocat->getCazuriCastigate();
+                cout<<"\n";
+
+            }
+            dp.proces->resetProces();
             break;
         }
 
@@ -271,7 +285,9 @@ void Meniu::ruleazaTurnBased(DateProces dp) {
         map <string,int> actiuniMap =dp.avocat->getStrategie()->paseazaActiuni() ;
         dp.avocat->seteazaScoruri(actiuniMap,dp.proces->getAcuzat(),dp.proces->getProbe(),dp.proces->getJudecator(),*(dp.proces));
 
-        dp.avocat ->aplicaActiune(actiuni[alegere]);
+        dp.avocat ->aplicaActiune(actiuni[alegere-1]);
+        if(alegere==3) dp.proces->getJudecator().analizeazaProbe();
+        if(alegere == 4 || alegere == 9) dp.proces->getJudecator().audiazaMartori();
     }
     }
 
