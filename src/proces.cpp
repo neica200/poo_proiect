@@ -17,11 +17,11 @@ void Proces::setAcuzat(Acuzat const &a) {
 }
 
 void Proces::setJudecator(shared_ptr<Judecator> j) {
-    judecator = move(j);
+    judecator = std::move(j);
 }
 
 void Proces::setProbe(ListaElemente<Proba> p) {
-    probe = move(p);
+    probe = std::move(p);
 }
 
 /*void Proces::setAvocat(const Avocat& av) {
