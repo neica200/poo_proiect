@@ -123,7 +123,7 @@ void Meniu::creeazaProcesManual() {
                 i--;
                 string descriere;
                 cout<<"Descriere: ";
-                cin>>descriere;
+                getline(cin,descriere);
                 int claritate;
                 cout<<"Claritate: ";
                 cin>>claritate;
@@ -137,10 +137,10 @@ void Meniu::creeazaProcesManual() {
                 i--;
                 string descriere;
                 cout<<"Descriere: ";
-                cin>>descriere;
+                getline(cin,descriere);
                 string tipDoc;
                 cout<<"Tip document: ";
-                cin>>tipDoc;
+                getline(cin,tipDoc);
                 probe.adauga(make_shared<ProbaDocument>(descriere,tipDoc));
                 continue;
             }

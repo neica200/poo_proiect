@@ -54,7 +54,7 @@ istream &operator>>(istream &is, Acuzat &acuzat) {
     cout<<"Acuzatie: ";
     is.ignore();
     getline(is, acuzat.acuzatie);
-    cout<<"Este vinovat?";
+    cout<<"Este vinovat(0-Nu,1-Da)?";
     is >> acuzat.vinovatie;
     return is;
 }

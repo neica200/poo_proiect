@@ -43,10 +43,10 @@ ostream& operator<<(ostream &os, const Persoana &persoana) {
 
 istream& operator>>(istream &is, Persoana &persoana) {
     cout<<"Introdu nume: ";
-    is>>persoana.nume;
+    getline(is>>std::ws,persoana.nume);
     cout<<"Introdu varsta: ";
     is>>persoana.varsta;
     cout<<"Introdu ocupatie: ";
-    is>>persoana.ocupatie;
+    getline(is>>std::ws,persoana.ocupatie);
     return is;
 }
